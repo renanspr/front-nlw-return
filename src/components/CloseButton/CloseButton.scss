@@ -1,0 +1,11 @@
+.close-button {
+  @apply absolute top-5 right-5 text-zinc-400;
+
+  &:hover {
+    @apply text-zinc-100;
+  }
+
+  .icon {
+    @apply w-4 h-4;
+  }
+}

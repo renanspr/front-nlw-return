@@ -1,0 +1,25 @@
+.widget {
+  @apply absolute flex flex-col items-end bottom-4 right-4 md:right-8 md:bottom-8;
+
+  &__button[type='button'] {
+    @apply flex items-center px-3 h-12 rounded-full bg-brand text-white;
+
+    &:hover {
+      .widget__text {
+        @apply max-w-xs;
+      }
+    }
+
+    .icon {
+      @apply w-6 h-6;
+    }
+  }
+
+  &__text {
+    @apply max-w-0 overflow-hidden transition-all duration-500 ease-linear;
+
+    span {
+      @apply pl-2;
+    }
+  }
+}
