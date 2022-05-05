@@ -1,0 +1,49 @@
+.feedback-content {
+  @apply w-full my-4;
+
+  textarea {
+    @apply w-full min-w-[304px] min-h-[112px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md resize-none;
+
+    &:focus {
+      @apply border-brand ring-brand ring-1 outline-none;
+    }
+  }
+
+  footer {
+    @apply flex gap-2 mt-2;
+
+    button[type='submit'] {
+      @apply flex-1 flex justify-center items-center p-2 text-sm text-zinc-100 bg-brand rounded-md border-transparent transition-colors;
+
+      &:hover {
+        @apply bg-brand-hover;
+      }
+
+      &:focus {
+        @apply outline-none ring-2 ring-offset-2 ring-offset-zinc-900 ring-brand;
+      }
+
+      &:disabled {
+        @apply opacity-50;
+
+        &:hover {
+          @apply bg-brand cursor-not-allowed;
+        }
+      }
+    }
+  }
+}
+
+.feedback-content-header {
+  &__button {
+    @apply absolute top-5 left-5 text-zinc-400;
+
+    &:hover {
+      @apply text-zinc-100;
+    }
+  }
+
+  span {
+    @apply flex items-center gap-2;
+  }
+}

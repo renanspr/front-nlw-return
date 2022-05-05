@@ -1,0 +1,27 @@
+.screenshot-button {
+  @apply p-2 bg-zinc-800 rounded-md border-transparent transition-colors;
+
+  &:hover {
+    @apply bg-zinc-700;
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-offset-zinc-900 ring-brand;
+  }
+
+  .icon {
+    @apply w-6 h-6 text-zinc-100;
+  }
+}
+
+.screenshot-preview {
+  @apply flex justify-end items-end w-10 h-10 p-1 rounded-md border-transparent text-zinc-400 transition-colors;
+
+  .icon {
+    @apply w-4 h-4;
+  }
+
+  &:hover {
+    @apply text-zinc-100;
+  }
+}

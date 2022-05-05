@@ -1,0 +1,19 @@
+.feedback-success {
+  @apply flex flex-col items-center w-[304px] py-10;
+
+  p {
+    @apply text-xl mt-2;
+  }
+
+  button {
+    @apply mt-6 py-2 px-6 text-sm bg-zinc-800 rounded-md border-transparent leading-6 transition-colors;
+
+    &:hover {
+      @apply bg-zinc-700;
+    }
+
+    &:focus {
+      @apply outline-none ring-2 ring-offset-2 ring-offset-zinc-900 ring-brand;
+    }
+  }
+}

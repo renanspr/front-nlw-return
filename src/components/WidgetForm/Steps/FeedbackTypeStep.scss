@@ -1,0 +1,15 @@
+.feedback-type {
+  @apply flex w-full py-8 gap-2;
+
+  button {
+    @apply flex flex-col items-center flex-1 w-24 py-5 gap-2 border-2 border-transparent rounded-lg bg-zinc-800 transition-all;
+
+    &:hover {
+      @apply border-brand;
+    }
+
+    &:focus {
+      @apply border-brand outline-none;
+    }
+  }
+}

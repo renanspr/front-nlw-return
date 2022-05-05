@@ -1,6 +1,6 @@
 import { Popover } from '@headlessui/react'
 import { X } from 'phosphor-react'
-import './CloseButton.scss'
+import './styles.scss'
 
 export function CloseButton() {
   return (
