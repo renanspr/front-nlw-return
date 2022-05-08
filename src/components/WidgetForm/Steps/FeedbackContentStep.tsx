@@ -1,6 +1,8 @@
 import { FormEvent, useState } from 'react'
 import { CloseButton } from 'components/CloseButton'
 import { ArrowLeft } from 'phosphor-react'
+import { api } from 'services/api'
+import { Loading } from 'components/Loading'
 import { ScreenshotButton } from '../ScreenshotButton'
 import { FeedbackType, feedbackTypes } from '..'
 
@@ -19,17 +21,22 @@ export function FeedbackContentStep({
 }: FeedbackContentStepProps) {
   const [screenshot, setScreenshot] = useState<string | null>(null)
   const [comment, setComment] = useState('')
+  const [isSendingFeedback, setIsSendingFeedback] = useState(false)
 
   const feedbackTypeInfo = feedbackTypes[feedbackType]
 
-  const handleSubmitFeedback = (event: FormEvent) => {
+  const handleSubmitFeedback = async (event: FormEvent) => {
     event.preventDefault()
 
-    console.log({
+    setIsSendingFeedback(true)
+
+    await api.post('/feedbacks', {
+      type: feedbackType,
       comment,
       screenshot,
     })
 
+    setIsSendingFeedback(false)
     onFeedbackSent()
   }
 
@@ -68,8 +75,11 @@ export function FeedbackContentStep({
             onScreenshotTook={setScreenshot}
           />
 
-          <button type="submit" disabled={comment.length === 0}>
-            Enviar feedback
+          <button
+            type="submit"
+            disabled={comment.length === 0 || isSendingFeedback}
+          >
+            {isSendingFeedback ? <Loading /> : 'Enviar feedback'}
           </button>
         </footer>
       </form>
